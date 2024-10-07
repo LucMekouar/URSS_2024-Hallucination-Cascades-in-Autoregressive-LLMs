@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository contains the code and data analysis scripts used for the URSS 2024 summer research project. The project focuses on generating and analyzing responses from various large language models (LLMs) and involves both descriptive and inferential analysis of the results.
+This repository contains the code scripts, dataset and human labelled data used for the URSS 2024 summer research project. The project focuses on generating and analyzing responses from various large language models (LLMs) and involves both descriptive and inferential analysis of the results.
 
 ## Code Overview
 
