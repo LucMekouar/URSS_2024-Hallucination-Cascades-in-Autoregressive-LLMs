@@ -2,13 +2,13 @@
 
 ## Description
 
-This repository contains the code and data analysis scripts used for the URSS 2024 summer research project. The project focuses on generating and analyzing responses from various large language models (LLMs) and involves both descriptive and inferential analysis of the results.
+This repository contains the code scripts, dataset and human labelled data used for the URSS 2024 summer research project. The project focuses on generating and analyzing responses from various large language models (LLMs) and involves both descriptive and inferential analysis of the results.
 
 ## Code Overview
 
 ### `response_generation.py`
 
-- **Description**: Concurrently generates detailed responses to questions from a CSV file using a local API that supports five different LLMs (e.g., qwen2, llama3.1). The responses are saved to a JSON file.
+- **Description**: Concurrently generates detailed responses to questions from a CSV file using a local API that supports five different LLMs (gemma2, qwen(0.5b), qwen2(7b), llama3.1, mistral-nemo). The responses are saved to a JSON file.
 - **Location**: `/code/response_generation.py`
 
 ### `convert_json_to_csv.py`
@@ -16,39 +16,45 @@ This repository contains the code and data analysis scripts used for the URSS 20
 - **Description**: Converts a JSON file containing response data into a CSV file.
 - **Location**: `/code/convert_json_to_csv.py`
 
-### `pre-labeling.py`
-
-- **Description**: Splits responses into individual sentences, numbers each sentence, and adds related information such as the question, correct answers, and incorrect answers to the output file.
-- **Location**: `/code/sentence/pre-labeling.py`
-
 ### `sentence_labelling.py`
 
-- **Description**: Concurrently processes and labels response data from a CSV file using a local API (e.g., llama3.1), and then saves the labeled results to a JSON file.
+- **Description**: Concurrently processes and labels on a sentence level responses using a local API (llama3.1 and gemma2).
 - **Location**: `/code/sentence/sentence_labelling.py`
 
-### `descriptive_data_analysis_sentence.py`
+### `sentence_level_analysis.py`
 
-- **Description**: Performs descriptive statistics on the labeled data, including calculating the number of disregarded responses, the average number of labels per response, and the totals and averages of each label type.
-- **Location**: `/code/sentence/descriptive_data_analysis_sentence.py`
+- **Description**: Performs descriptive and inferential statistics on the labeled data, including the generation of autocorrelation graphs.
+- **Location**: `/code/sentence/sentence_level_analysis.py`
 
-### `inferential_data_analysis_sentence.py`
+### `generate_manually_labelled_sentence.py`
 
-- **Description**: Conducts inferential data analysis by performing autocorrelation analysis on hallucinatory labels across responses, helping to identify patterns over sequential data.
-- **Location**: `/code/sentence/inferential_data_analysis_sentence.py`
+- **Description**: Samples 100 responses (each of at least 10 sentences) for human labelling benchmark.
+- **Location**: `/code/sentence/generate_manually_labelled_sentence.py`
 
-## Necessary Libraries
+### `cohen's_kappa_sentence.py`
 
-The following Python libraries/modules are required to run the scripts in this repository:
+- **Description**: Calculates the Cohen's Kappa value between each labelling model and the human on the labelled sample.
+- **Location**: `/code/sentence/cohen's_kappa_sentence.py`
 
-- `pandas`: For data manipulation and CSV file handling.
-- `requests`: For making HTTP requests to the local API.
-- `json`: For working with JSON data.
-- `concurrent.futures`: For concurrent execution of tasks (e.g., API calls).
-- `os`: For interacting with the operating system (e.g., file paths, process priority).
-- `nltk`: For natural language processing, specifically sentence tokenization.
-- `re`: For regular expressions used in text processing.
-- `matplotlib`: For creating plots and visualizations.
-- `statsmodels`: For performing statistical analyses (i.e. autocorrelation).
+### `token_labelling.py`
+
+- **Description**: Concurrently processes and labels on a token level responses using a local API (llama3.1 and gemma2).
+- **Location**: `/code/token/token_labelling.py`
+
+### `token_level_analysis.py`
+
+- **Description**: Calculates the Cohen's Kappa value between each labelling model and the human on the labelled sample.
+- **Location**: `/code/token/token_level_analysis.py`
+
+### `generate_manually_labelled_token.py`
+
+- **Description**: Samples 20 responses (each of exactly 50 tokens) for human labelling benchmark.
+- **Location**: `/code/sentence/generate_manually_labelled_token.py`
+
+### `cohen's_kappa_token.py`
+
+- **Description**: Calculates the Cohen's Kappa value between each labelling model and the human on the labelled sample.
+- **Location**: `/code/token/cohen's_kappa_token.py`
 
 ## Using Ollama and Required Models
 
