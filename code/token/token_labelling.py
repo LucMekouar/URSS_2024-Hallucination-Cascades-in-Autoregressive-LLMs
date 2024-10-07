@@ -166,7 +166,7 @@ def process_response(row, model_name, temperature, top_p, random_seed, max_token
 def main():
     logging.info("Process started.")
 
-    csv_file_path = '/Users/lucmacbookpro-profile/Desktop/summer research/URSS 2024/data_results/token/50.tokenized_qwen2(0.5b).csv'
+    csv_file_path = '***.csv'
     data = load_csv(csv_file_path)
 
     # Process only the first x rows for testing
@@ -174,7 +174,7 @@ def main():
 
     processed_responses = []
 
-    model_name = "gemma2"
+    model_name = "***"  # gemma2 or llama3.1
     temperature = 0
     top_p = 1
     random_seed = 17
@@ -199,7 +199,7 @@ def main():
         else:
             logging.error(f"Response {i+1} failed to process.")
 
-    output_file_path = '/Users/lucmacbookpro-profile/Desktop/summer research/URSS 2024/data_results/token/token_labelled_qwen2(0.5b)_(by_gemma2).json'
+    output_file_path = '***.json'
     with open(output_file_path, 'w', encoding='utf-8') as f:
         json.dump(processed_responses, f, indent=2, ensure_ascii=False)
 

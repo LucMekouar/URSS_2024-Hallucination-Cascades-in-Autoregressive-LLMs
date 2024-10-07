@@ -103,20 +103,20 @@ def process_response(index, question_number, input_temperature, question_text, r
     return result
 
 # Load CSV data
-csv_file_path = '/Users/lucmacbookpro-profile/Desktop/summer research/URSS 2024/data_results/cleaned_files/clean_responses_mistral-nemo.csv'
+csv_file_path = '***.csv'
 data = load_csv(csv_file_path)
 
-questions = data['Question']  #.tolist()[:20]
-responses = data['response']  #.tolist()[:20]
-question_numbers = data['question_number'] #.tolist()[:20]
-input_temperatures = data['temperature']  #.tolist()[:20]
-correct_answers = data['Correct Answers']  #.tolist()[:20]
-incorrect_answers = data['Incorrect Answers']  #.tolist()[:20]
+questions = data['Question']  
+responses = data['response']  
+question_numbers = data['question_number'] 
+input_temperatures = data['temperature']  
+correct_answers = data['Correct Answers'] 
+incorrect_answers = data['Incorrect Answers']
  
 processed_responses = []
 
 # Parameters
-model_name = "gemma2"
+model_name = "***" #gemma2 or llama3.1
 temperature = 0
 top_p = 1
 max_tokens = 60
@@ -143,7 +143,7 @@ with ThreadPoolExecutor(max_workers=max_workers) as executor:
             logging.error(f"Error processing response {response_index + 1}: {e}")
 
 # Save labels to a JSON file
-output_file_path = '/Users/lucmacbookpro-profile/Desktop/summer research/URSS 2024/data_results/sentence/json/B_labelled_mistral-nemo(label_by_gemma2).json'
+output_file_path = '***.json'
 logging.info(f"Saving labels to {output_file_path}")
 with open(output_file_path, 'w', encoding='utf-8') as f:
     json.dump(processed_responses, f, indent=2, ensure_ascii=False)

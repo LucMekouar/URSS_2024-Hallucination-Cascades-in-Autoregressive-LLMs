@@ -49,17 +49,17 @@ def process_question(index, question, model_name, temperature, top_p, max_tokens
         return None
 
 # Load the CSV file containing the questions
-csv_file_path = '/Users/lucmacbookpro-profile/Desktop/summer research/URSS 2024/data/TruthfulQA.csv'
+csv_file_path = '.../URSS_public_repo/data/TruthfulQA.csv'
 data = load_csv(csv_file_path)
 
 
-questions = data['Question'].tolist()[:3]
+questions = data['Question'].tolist()
 
 responses = []
 
-# Parameters
-model_name = "gemma2"  # llama3.1 (7B,Meta)  gemma2 (9B,Google)  qwen2 (7B,Alibaba)  qwen2:0.5b (0.5B,Alibaba)  mistral-nemo (12B,Mistral)
-temperatures = [0, 10, 100, 1000, 10000]
+# Parameters (input model name to generate responses for that model)
+model_name = "***"  # llama3.1 (7B,Meta)  gemma2 (9B,Google)  qwen2 (7B,Alibaba)  qwen2:0.5b (0.5B,Alibaba)  mistral-nemo (12B,Mistral)
+temperatures = [0, 0.75, 1, 1.25, 2]
 top_p = 1
 max_tokens = 1000  
 random_seed = 1337
@@ -78,7 +78,7 @@ with ThreadPoolExecutor(max_workers=18) as executor:
             print(f"Error processing question {question_index+1} with temperature {temp}: {e}")
 
 # Save responses to a JSON fileq
-output_file_path = '/Users/lucmacbookpro-profile/Desktop/summer research/URSS 2024/data_results/json/000.responses_gemma2-T10.json'
+output_file_path = '***.json'
 with open(output_file_path, 'w') as f:
     json.dump(responses, f, indent=2)
 

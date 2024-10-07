@@ -4,8 +4,8 @@ import pandas as pd
 import json
 
 # Input and output file paths
-input_json_file = '/Users/lucmacbookpro-profile/Desktop/summer research/URSS 2024/data_results/json/responses_qwen2:0.5b.json'
-output_csv_file = '/Users/lucmacbookpro-profile/Desktop/summer research/URSS 2024/data_results/responses_qwen2(0.5b).csv'
+input_json_file = '***.json'
+output_csv_file = '***.csv'
 
 #Read the JSON data
 with open(input_json_file, 'r') as f:

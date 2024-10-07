@@ -1,8 +1,10 @@
+# sample of 100 rows for human labelling
+
 import pandas as pd
 
 # File paths
-input_file_path = '/Users/lucmacbookpro-profile/Desktop/summer research/URSS 2024/data_results/sentence/pivoted_cleaned_comparison_big_data_frame.csv'
-output_file_path = '/Users/lucmacbookpro-profile/Desktop/summer research/URSS 2024/data_results/sentence/sentence_human_label_data.csv'
+input_file_path = '***.csv'
+output_file_path = '***.csv'
 
 # Load the dataset
 df = pd.read_csv(input_file_path)
@@ -25,8 +27,8 @@ columns_to_drop = [
 df_sampled = df_sampled.drop(columns=columns_to_drop)
 
 # Move the 'response' column to the rightmost position
-response_col = df_sampled.pop('response_')  # Remove the 'response' column
-df_sampled['response_'] = response_col  # Add 'response' back as the last column
+response_col = df_sampled.pop('response_')  
+df_sampled['response_'] = response_col  
 
 # Output the resulting 100 rows to a new CSV file
 df_sampled.to_csv(output_file_path, index=False)
