@@ -64,7 +64,7 @@ This project relies on Ollama to run the following large language models locally
 - **gemma2 (9B, Google)**
 - **qwen2 (7B, Alibaba)**
 - **qwen2 (0.5B, Alibaba)**
-- **mistral-nemo (12B, Mistral)**
+- **mistral-nemo (12B, MistralAI)**
 
 ### Instructions:
 
