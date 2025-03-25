@@ -2,7 +2,9 @@
 
 ## Description
 
-This repository contains the code scripts, dataset and human labelled data used for this Undergraduate Research Support Scheme (URSS) 2024 summer research project. The project focuses on generating and analyzing responses from various Large Language Models (LLMs) and involves both descriptive and inferential analysis of the results. kindly find the 'published' write up here: https://urss.warwick.ac.uk/items/show/598
+This repository contains the code scripts, dataset and human labelled data used for this Undergraduate Research Support Scheme (URSS) 2024 summer research project. The project focuses on generating and analyzing responses from various Large Language Models (LLMs) and involves both descriptive and inferential analysis of the results. 
+
+kindly find the 'published' write up here: https://urss.warwick.ac.uk/items/show/598
 
 ## Code Overview
 
